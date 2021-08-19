@@ -8,7 +8,7 @@ const index_page = fs.readFileSync('./index.ejs', 'utf8');
 const login_page = fs.readFileSync('./login.ejs', 'utf8');
 
 const max_num = 10; //最大保管数
-const filename = 'mysata.txt' //データファイル名
+const filename = 'mydata.txt' //データファイル名
 var message_data; //データ
 readFromFile(filename);
 
