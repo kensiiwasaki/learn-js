@@ -85,7 +85,7 @@ function write_index(request, response) {
 // テキストファイルをロード
 function readFromFile(fname) {
     fs.readFile(fname, 'utf8', (err, data) => {
-        message_data = data.split('\n');
+        message_data = data.split('\n'); //エラー出る
     })
 }
 
