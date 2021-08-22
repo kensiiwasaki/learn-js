@@ -49,7 +49,7 @@ function response_login(request, response) {
 // indexのアクセス処理
 function response_index(request, response) {
     // POSTアクセス時の処理
-    if (request.metod == 'POST') {
+    if (request.method == 'POST') {
         var body = '';
 
     // データ受信のイベント処理
