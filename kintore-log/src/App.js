@@ -15,7 +15,8 @@ const App = () => {
      endDate={new Date("2021-12-31")}
 
      values={[
-       { date: "2021-09-30", count: 1 },
+       { date: "2021-08-30", count: 1 },
+       { data: "2021-08-29", count: 2 },
        // ...and so on
      ]}
 
