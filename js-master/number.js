@@ -25,3 +25,4 @@ async function listUsers() {
 // イベント
 window.addEventListener("load", listUsers);
 button.addEventListener("click", listUsers);
+
