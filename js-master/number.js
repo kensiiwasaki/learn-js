@@ -19,5 +19,3 @@ let youtuber ={
 youtuber.list.business.youtuber[0].teachPrograming();
 
 youtuber.plan();
-
-youtuber.list.entertainment.makeSmile();
