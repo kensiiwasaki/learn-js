@@ -15,3 +15,5 @@ let youtuber ={
     plan() {},
     uploadVideo() {}
 };
+
+youtuber.list.business.youtuber[0].teachPrograming();
