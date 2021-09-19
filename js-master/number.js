@@ -8,8 +8,11 @@ button.addEventListener("click", async function() {
 
     // DOM操作
     users.forEach(function(user) {
-    const list = document.createElement("li");
-    list.innerText = user.name;
-    lists.appendChild(list);
+        if (user.id <= 5) {
+            const list = document.createElement("li");
+            list.innerText = user.name;
+            lists.appendChild(list);
+
+        }
     });
 });
