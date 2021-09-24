@@ -68,3 +68,19 @@ function sortTodos(a, b) {
             return todoList
     }
 }
+
+
+function editTodo(todo, type) {
+    todo.isEdit = type === "edit"
+    updateTodoList()
+}
+
+
+function deleteTodo(todo) {
+
+    const index = todoList.findIndex((t) => t.id === todo.id)
+
+    todoList.splice(index, 1)
+}
+
+
