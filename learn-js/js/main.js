@@ -4,7 +4,7 @@ let displayTarget = "inbox"
 let sortIndex = "created-desc"
 
 
-funciton createTodoHtmlString(todo) {
+function createTodoHtmlString(todo) {
     let htmlString = ""
     const editType = todo.isEdit ? "editFixed" : "edit"
     const editButtonLabel = todo.isEdit ? "編集完了" : "編集"
@@ -27,4 +27,22 @@ funciton createTodoHtmlString(todo) {
     htmlString += '<tr id=" ' + todo.id + '">'
     htmlString +=
         '<td class="cell-edit-button"><button data-type="' +
+        editType +
+        '">' +
+        editButtonLabel +
+        "</button></td>"
+    htmlString += todoTextCell
+    htmlString += '<td class="cell-created-at>' + todo.createdAt + "</td>"
+    htmlString += priorityCell
+    htmlString += '<td class="cell-done">'
+    htmlString += '<button data-type="' + doneType + '"'
+    htmlString += doneButtonLabel
+    htmlString += "</button></td>"
+    htmlString += "</td>"
+    htmlString += '<td class="cell-delete">'
+    htmlString += '<button data-type="delete">'
+    htmlString += '削除'
+    htmlString += "</button></td>"
+    htmlString += "</tr>"
+    return htmlString
 }
