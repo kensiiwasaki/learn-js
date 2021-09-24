@@ -84,3 +84,48 @@ function deleteTodo(todo) {
 }
 
 
+function updateTodoList() {
+    let htmlString = ""
+
+    todoList
+        .filter(todo => todo.isDone !== (displayTarget === "inbox"))
+        .sort(sortTodos)
+        .forEach(todo => {
+
+            htmlString += createTodoHtmlString(todo)
+            todiMain.innerHTML = htmlString
+        })
+        todoMain.innerHTML = htmlStrings
+
+        todoList
+            .filter(todo => todo.isDone !== (displayTarget === "inbox"))
+            .forEach(todo => {
+                const todoEl = document.getElementById(todo.id)
+                if (todoEl) {
+                    todoEl.querySelectorAll("button").forEach(btn => {
+                        const type = btn.dataset.type
+                        btn.addEventListener("click", event => {
+                            if (type.indexOf("edit") >= 0) {
+                                editTodo(todo, type)
+                            } else if (type.indexOf("delete") >= 0) {
+                                deleteTodo(todo)
+                                updateTodoState(todo, type)
+                            } else {
+                                updateTodoState(todo, type)
+                            }
+                        })
+                    })
+
+                    if (todo.isEdit) {
+                        todoEl.querySelector(".input-edit").addEventListener("input", event => {
+                            todo.text = event.currentTarget.value
+                        })
+                        todoEl
+                            .querySelector(".input-priority")
+                            .addEventListener("input", event => {
+                                todo.priority = parseInt(event.currentTarget.value, 10)
+                            })
+                    }
+                }
+            })
+}
