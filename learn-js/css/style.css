@@ -74,3 +74,34 @@ body {
     background: #eee;
     margin-top: 50px;
 }
+
+#input-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#input-form .input-text {
+    width: 60%;
+}
+
+#input-form .input-date {
+    width: 30%;
+}
+
+#input-form .input-text,
+#input-form .input-date {
+    padding: 5px;
+}
+
+#input-form .input-text input,
+#input-form .input-date input {
+    width: 100%;
+    padding: 10px;
+}
+
+#input-form .submit {
+    padding: 5px;
+    position: relative;
+    top: 8px;
+    font-size: 16px;
+}
