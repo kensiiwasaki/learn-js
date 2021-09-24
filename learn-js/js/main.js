@@ -146,3 +146,51 @@ function addTodo(todoObj) {
     updateTodoList()
     clearInputForm()
 }
+
+
+function handleSubmit(event) {
+    event.preventDefault()
+    const todoObj = {
+        text: inputForm["input-text"].value
+    }
+    addTodo(todoObj)
+}
+
+
+function handleTabClick(event) {
+    const me = event.currentTarget
+    displayTarget = me.dataset.target
+    updateTodoList()
+}
+
+
+function handleSort(e) {
+    sortIndex = e.currentTarget.value
+    updateTodoList()
+}
+
+
+function registerDOM() {
+    inputForm = document.querySelector("#input-form")
+    todoMain = document.querySelector("#todo-main")
+    tabButton = document.querySelector("#tab").querySelectorAll("button")
+    sortMenu = document.querySelector("#sort-menu")
+}
+
+
+function bindEvents() {
+    inputForm.addEventListener("submit", event => handleSubmit(event))
+    tabButton.forEach(tab => {
+        tab.addEventListener("click", event => handleTabClick(event))
+    })
+    sortMenu.addEventListener("change", event => handleSort(event))
+}
+
+
+function initialize() {
+    registerDOM()
+    bindEvents()
+    updateTodoList()
+}
+
+document.addEventListener("DOMContentLoaded", initialize.bind(this))
