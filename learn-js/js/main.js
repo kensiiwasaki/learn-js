@@ -54,3 +54,17 @@ function updateTodoState(todo, type) {
 }
 
 
+function sortTodos(a, b) {
+    switch (sortIndex) {
+        case "created-desc":
+            return Date.parse(b.createdAt) - Date.parse(a.createdAt)
+        case "created-asc":
+            return Date.parse(a.createdAt) - Date.parse(b.createdAt)
+        case "priority-desc":
+            return b.priority - a.priority
+        case "priority-asc":
+            return a.priority - b.priority
+        default:
+            return todoList
+    }
+}
