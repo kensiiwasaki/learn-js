@@ -93,7 +93,7 @@ function updateTodoList() {
         .forEach(todo => {
 
             htmlString += createTodoHtmlString(todo)
-            todiMain.innerHTML = htmlString
+            todoMain.innerHTML = htmlString
         })
         todoMain.innerHTML = htmlStrings
 
