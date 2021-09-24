@@ -46,3 +46,11 @@ function createTodoHtmlString(todo) {
     htmlString += "</tr>"
     return htmlString
 }
+
+
+function updateTodoState(todo, type) {
+    todo.isDone = type === "done"
+    updateTodoList()
+}
+
+
