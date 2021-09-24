@@ -129,3 +129,20 @@ function updateTodoList() {
                 }
             })
 }
+
+
+function clearInputForm() {
+    inputForm["input-text"].value = ""
+}
+
+
+function addTodo(todoObj) {
+    todoObj.id = "todo-" + (todoList.length + 1)
+    todoObj.createdAt = new Date().toLocaleString()
+    todoObj.priority = 3
+    todoObj.isDone = false
+    todoObj.isEdit = false
+    todoList.unshift(todoObj)
+    updateTodoList()
+    clearInputForm()
+}
