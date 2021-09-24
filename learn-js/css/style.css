@@ -46,3 +46,31 @@ body {
 .cell-text {
     width: 30%;
 }
+
+.cell-created-at {
+    width: 15%;
+    text-align: center;
+}
+
+.cell-priority {
+    width: 10%;
+    text-align: center;
+}
+
+.cell-limit-at {
+    width: 15%;
+    text-align: center;
+}
+
+.cell-done {
+    width: 10%;
+    text-align: center;
+}
+
+#input-form {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #eee;
+    margin-top: 50px;
+}
