@@ -69,13 +69,13 @@ function sortTodos(a, b) {
     }
 }
 
-
+// 編集するための関数
 function editTodo(todo, type) {
     todo.isEdit = type === "edit"
     updateTodoList()
 }
 
-
+// 削除するための関数
 function deleteTodo(todo) {
 
     const index = todoList.findIndex((t) => t.id === todo.id)
