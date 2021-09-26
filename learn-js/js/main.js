@@ -32,10 +32,10 @@ function createTodoHtmlString(todo) {
         editButtonLabel +
         "</button></td>"
     htmlString += todoTextCell
-    htmlString += '<td class="cell-created-at>' + todo.createdAt + "</td>"
+    htmlString += '<td class="cell-created-at">' + todo.createdAt + "</td>"
     htmlString += priorityCell
     htmlString += '<td class="cell-done">'
-    htmlString += '<button data-type="' + doneType + '"'
+    htmlString += '<button data-type="' + doneType + '">'
     htmlString += doneButtonLabel
     htmlString += "</button></td>"
     htmlString += "</td>"
