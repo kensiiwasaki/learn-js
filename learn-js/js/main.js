@@ -83,10 +83,10 @@ function deleteTodo(todo) {
     todoList.splice(index, 1)
 }
 
-
+// リストの描画を更新する
 function updateTodoList() {
     let htmlStrings = ""
-
+　　//HTMLを書き換える
     todoList
         .filter(todo => todo.isDone !== (displayTarget === "inbox"))
         .sort(sortTodos)
