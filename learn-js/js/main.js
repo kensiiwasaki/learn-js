@@ -10,7 +10,7 @@ function createTodoHtmlString(todo) {
     const editButtonLabel = todo.isEdit ? "編集完了" : "編集"
     const doneType = todo.isDone ? "inbox" : "done"
     const doneButtonLabel = todo.isDone ? "未完了" : "完了"
-    let todoTextCell, priortyCell
+    let todoTextCell, priorityCell
     if (todo.isEdit) {
         todoTextCell = 
             '<td class="cell-text"><input class="input-edit" type=""text" value=' +
