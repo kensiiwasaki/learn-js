@@ -12,25 +12,25 @@ function createTodoHtmlString(todo) {
     const doneButtonLabel = todo.isDone ? "未完了" : "完了"
     let todoTextCell, priorityCell
     if (todo.isEdit) {
-        todoTextCell = 
-            '<td class="cell-text"><input class="input-edit" type=""text" value=' +
-            todo.text +
-            " /></td>"
-        priorityCell = 
-            '<td class="cell-priority><input class="input-priority type="number" value=' +
-            todo.priority +
-            " /></td>"
+      todoTextCell =
+        '<td class="cell-text"><input class="input-edit" type="text" value=' +
+        todo.text +
+        " /></td>"
+      priorityCell =
+        '<td class="cell-priority"><input class="input-priority" type="number" value=' +
+        todo.priority +
+        " /></td>"
     } else {
-        todoTextCell = '<td class="cell-text">' + todo.text + "</td>"
-        priorityCell = '<td class="cell-priority">' + todo.priority + "</td>"
+      todoTextCell = '<td class="cell-text">' + todo.text + "</td>"
+      priorityCell = '<td class="cell-priority">' + todo.priority + "</td>"
     }
-    htmlString += '<tr id=" ' + todo.id + '">'
+    htmlString += '<tr id="' + todo.id + '">'
     htmlString +=
-        '<td class="cell-edit-button"><button data-type="' +
-        editType +
-        '">' +
-        editButtonLabel +
-        "</button></td>"
+      '<td class="cell-edit-button"><button data-type="' +
+      editType +
+      '">' +
+      editButtonLabel +
+      "</button></td>"
     htmlString += todoTextCell
     htmlString += '<td class="cell-created-at">' + todo.createdAt + "</td>"
     htmlString += priorityCell
@@ -45,7 +45,7 @@ function createTodoHtmlString(todo) {
     htmlString += "</button></td>"
     htmlString += "</tr>"
     return htmlString
-}
+  }
 
 
 function updateTodoState(todo, type) {
@@ -85,15 +85,15 @@ function deleteTodo(todo) {
 
 
 function updateTodoList() {
-    let htmlString = ""
+    let htmlStrings = ""
 
     todoList
         .filter(todo => todo.isDone !== (displayTarget === "inbox"))
         .sort(sortTodos)
         .forEach(todo => {
 
-            htmlString += createTodoHtmlString(todo)
-            todoMain.innerHTML = htmlString
+            htmlStrings += createTodoHtmlString(todo)
+            todoMain.innerHTML = htmlStrings
         })
         todoMain.innerHTML = htmlStrings
 
