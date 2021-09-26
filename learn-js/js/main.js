@@ -3,7 +3,7 @@ let inputForm, todoMain, tabButton, sortMenu
 let displayTarget = "inbox"
 let sortIndex = "created-desc"
 
-
+// ToDoの一個単位のHTML文字列を生成
 function createTodoHtmlString(todo) {
     let htmlString = ""
     const editType = todo.isEdit ? "editFixed" : "edit"
@@ -47,13 +47,13 @@ function createTodoHtmlString(todo) {
     return htmlString
   }
 
-
+// 完了ステートの変更
 function updateTodoState(todo, type) {
     todo.isDone = type === "done"
     updateTodoList()
 }
 
-
+// ソートするための関数
 function sortTodos(a, b) {
     switch (sortIndex) {
         case "created-desc":
