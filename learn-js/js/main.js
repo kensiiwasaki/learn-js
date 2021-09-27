@@ -54,6 +54,7 @@ function updateTodoState(todo, type) {
 }
 
 // ソートするための関数
+
 function sortTodos(a, b) {
     switch (sortIndex) {
         case "created-desc":
